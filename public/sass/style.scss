@@ -168,7 +168,7 @@ a {
 		@include rotateZ($base-rotation - 15deg);
 	}
 	
-	&:nth-last-child(1),&:nth-last-child(2),&:nth-last-child(3){
+	&:nth-last-child(1),&:nth-last-child(2),&:nth-last-child(3),&:first-child{
 		.card{
 			@include box-shadow(black 0px 0px 10px 1px);
 		}

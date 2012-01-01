@@ -390,7 +390,7 @@ a {
   transform: rotate(-375deg);
 }
 /* line 172, ../sass/style.scss */
-.cardContainerX:nth-last-child(1) .card, .cardContainerX:nth-last-child(2) .card, .cardContainerX:nth-last-child(3) .card {
+.cardContainerX:nth-last-child(1) .card, .cardContainerX:nth-last-child(2) .card, .cardContainerX:nth-last-child(3) .card, .cardContainerX:first-child .card {
   -moz-box-shadow: black 0px 0px 10px 1px;
   -webkit-box-shadow: black 0px 0px 10px 1px;
   -o-box-shadow: black 0px 0px 10px 1px;

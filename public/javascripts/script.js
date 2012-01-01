@@ -16,8 +16,6 @@ var Game = new Class({
 		this.currentCard = null;
 		
 		this.el.getChildren('.loading').destroy();
-		
-		
 		this.cardMap = [];
 		for(var i = 1; i <= 13; i++){
 			for(var j = 0; j < 4; j++){
@@ -122,17 +120,41 @@ var Game = new Class({
 	}
 });
 
-socket.on('new-game', function (data) {
-	$('game').game = new Game($('game'),data);
-});
-socket.on('dealCard', function (data) {
-	$('game').game.renderCard(data.card);
-	//$('game').game.canControl(true);
+window.addEvent('domready',function(){
+	if(Browser.name !== "chrome"){
+		document.body.destroy();
+		window.location = 'https://www.google.com/chrome/';
+	}else{
+		window.addEvent('fbAsyncInit',function(){
+			socket.emit('player-ready',{uid: FB.getUserID()})
+		});
+	
+		socket.on('new-game', function (data) {
+			console.log(data);
+			$('game').game = new Game($('game'),data);
+		});
+		socket.on('dealCard', function (data) {
+			$('game').game.renderCard(data.card);
+			//$('game').game.canControl(true);
+		});
+
+		socket.on('partner-disconnect', function () {
+			$('game').game.destroy();
+			delete $('game').game;
+		});
+	}
 });
 
-socket.on('partner-disconnect', function () {
-	$('game').game.destroy();
-	delete $('game').game;
+function resizeCanvas(){
+	FB.Canvas.getPageInfo(function(info) {
+		$('game').setStyle('height',info.clientHeight - 120);
+	});
+}
+
+window.addEvent('fbAsyncInit',function(){
+	resizeCanvas();
+	
+	
 });
 
 

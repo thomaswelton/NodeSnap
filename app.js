@@ -31,11 +31,12 @@ function createGame(player1,player2){
 	io.sockets.sockets[player1].join(gameId);
 	io.sockets.sockets[player2].join(gameId);
 	
-	players[player1] = {gameId: gameId, partner: player2};
+	players[player1].gameId = gameId;
+	players[player1].partner = player2;
 	players[player2] = {gameId: gameId, partner: player1};
 	
 	var cards = cardDeck.sort( arrayShuffle );
-	io.sockets.in(gameId).emit('new-game', {room: gameId, start: player1, cards: cards});
+	io.sockets.in(gameId).emit('new-game', {room: gameId, start: player1, cards: cards, players: [players[player1],players[player2]]});
 	
 	var dealFunction = function (data) {
 		console.log(data);
@@ -60,7 +61,13 @@ function matchPlayer(player1){
 }
 
 io.sockets.on('connection', function (socket) {
-	var player1 = socket.id;
+	
+	socket.on('player-ready', function (data) {
+		var player1 = socket.id;
+		players[player1] = {};
+		players[player1].uid = data.uid
+		matchPlayer(player1);
+	});
 	
 	socket.on('disconnect', function () {
 		var player1 = this.id;
@@ -76,8 +83,6 @@ io.sockets.on('connection', function (socket) {
 			delete players[player1];
 		}
   	});
-	
-	matchPlayer(player1);
 });
 
 // Configuration
@@ -103,6 +108,19 @@ app.configure('production', function(){
 
 app.get('/', routes.index);
 app.post('/', routes.index);
+
+app.get('/channel.html', function(req,res){
+	var cache_expire = 60*60*24*365;
+	var now = new Date();
+	var newms = now.getTime()+(cache_expire * 1000);
+	var expire = new Date(newms);
+	
+	res.header('Pragma', 'public');
+	res.header('Cache-Control',  'max-age='+cache_expire);
+	res.header('Expires', expire.toString());
+	res.send('<script src="//connect.facebook.net/en_US/all.js"></script>');
+	
+});
 
 app.listen(1338);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

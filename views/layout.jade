@@ -6,3 +6,21 @@ html
 		script(src='/socket.io/socket.io.js')
 		script(src='/javascripts/mootools-core.js')
 	body!= body
+		#fb-root
+		script
+			window.fbAsyncInit = function() {
+				FB._https = (window.location.protocol == "https:");
+				FB.init({
+					appId : '301450633231571', channelUrl : '//'+window.location.host+'/channel.html', status	: true, cookie	: true, xfbml	: true
+				});
+				FB.Canvas.setAutoResize();
+				window.fireEvent('fbAsyncInit')
+			};
+			
+			// Load the SDK Asynchronously
+			(function(d){
+				var js, id		 = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
+				js				 = d.createElement('script'); js.id = id; js.async = true;
+				js.src			 = "//connect.facebook.net/en_US/all.js";
+				d.getElementsByTagName('head')[0].appendChild(js);
+			}(document));
