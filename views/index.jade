@@ -1,4 +1,9 @@
 script(src='/javascripts/script.js')
-#game Waiting for partner
-
-button#deal(type="button") Deal
+#game
+	.loading 
+		h1 Waiting for partner
+	.pack
+		each i in [1,2,3,4,5]
+			.packEl
+	button#deal(type="button") Deal
+	

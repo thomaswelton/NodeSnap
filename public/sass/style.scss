@@ -10,6 +10,7 @@ $cardHeight: 500px;
 
 html,body{
 	height:100%;
+	min-height:800px;
 	width:100%;
 }
 body {
@@ -30,8 +31,20 @@ a {
 	width:100%;
 	min-width:584px;
 	height:100%;
-	min-height:584px;
+	min-height:800px;
 	position:relative;
+	
+	.loading{
+		display:block;
+		width:100%;
+		text-align:center;
+		margin:40px auto;
+		position:absolute;
+		h1{
+			font-size:5em;
+			color:white;
+		}
+	}
 	
 	
 	.back,.card,.packEl{
