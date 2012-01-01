@@ -16,6 +16,15 @@ var Game = new Class({
 		this.currentCard = 0;
 		$('game').set('html','');
 		
+		var pack = new Element('div',{class: 'pack'});
+		
+		for(var i = 1; i <= 5; i++){
+			var packEl = new Element('div',{class: 'packEl'});
+			packEl.injectInside(pack);
+		}
+		pack.injectInside(this.el);
+		
+		
 		this.cardMap = [];
 		for(var i = 1; i <= 13; i++){
 			for(var j = 0; j < 4; j++){

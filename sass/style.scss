@@ -27,15 +27,70 @@ a {
 	height:100%;
 	min-height:584px;
 	position:relative;
+	
+	.back,.card,.packEl{
+		position:absolute;
+		width:300px;
+		height: $cardHeight;
+		border:1px solid #fff;
+		@include border-radius(15px);
+		@include backface-visibility(hidden);
+	}
+	
+	.back, .packEl{
+		@include background-image(
+			radial-gradient(0 0, black 12%, rgba(0,0,0,0) 16%),
+			radial-gradient(8px 8px, black 15%, rgba(0,0,0,0) 16%),
+			radial-gradient(0 1px, rgba(255,255,255,.1) 15%, rgba(0,0,0,0) 20%),
+			radial-gradient(8px 9px, rgba(255,255,255,.1) 15%, rgba(0,0,0,0) 20%)
+		);
+		
+		background-color:#282828;
+		background-size:16px 16px;
+		background-color:#282828;
+		background-size:16px 16px;
+	}
+	
+	.pack{
+		@include rotateZ(-315deg);
+		width:300px;
+		height: $cardHeight;
+		top:0; left:0;
+		
+		.packEl{
+			
+			&:nth-last-child(1){
+				left:8px;
+				top:8px;
+				z-index:1;
+				@include box-shadow(black 0px 0px 10px 1px);
+			}
+			&:nth-last-child(2){
+				left:6px;
+				top:6px;
+				z-index:2;
+			}
+			&:nth-last-child(3){
+				left:4px;
+				top:4px;
+				z-index:3;
+			}
+			&:nth-last-child(4){
+				left:2px;
+				top:2px;
+				z-index:4;
+			}
+		}
+	}
 }
 
 @mixin spinIn(){
   	 0%{
-		@include rotateZ(0deg);
+		@include rotateZ(-315deg);
 		top:0;
 		left:0; 
-		margin-top:-300px;
-		margin-left:-500px;
+		margin-top:0;
+		margin-left:0;
 	}
 }
 @mixin flipIn(){
@@ -43,7 +98,7 @@ a {
 		@include rotateY(180deg);
 	}
 	100%{
-		@include rotateY(360deg);
+		@include rotateY(0deg);
 	}
 }
 
@@ -68,9 +123,9 @@ a {
 
 .cardContainerX{
 	@include transition-property('all');
-	-webkit-animation: spinIn 1.5s;
-    -moz-animation:    spinIn 1.5s;
-    -ms-animation:     spinIn 1.5s;
+	-webkit-animation: spinIn 2s;
+    -moz-animation:    spinIn 2s;
+    -ms-animation:     spinIn 2s;
 	
 	position:absolute;
 	width:300px;
@@ -80,17 +135,18 @@ a {
 	left:50%;
 	margin-left: floor((-1 * 300px) / 2);
 	
+	$base-rotation: -315deg + 180deg;
 	&:nth-child(1n){
-		@include rotateZ(345deg);
+		@include rotateZ($base-rotation + 15deg);
 	}
 	&:nth-child(2n){
-		@include rotateZ(355deg);
+		@include rotateZ($base-rotation + -5deg);
 	}
 	&:nth-child(3n){
-		@include rotateZ(375deg);
+		@include rotateZ($base-rotation + 15deg);
 	}
 	&:nth-child(4n){
-		@include rotateZ(360deg);
+		@include rotateZ($base-rotation + -15deg);
 	}
 	
 	&:nth-last-child(1),&:nth-last-child(2),&:nth-last-child(3){
@@ -102,38 +158,18 @@ a {
 }
 .cardContainerY{
 	@include transition-property('all');
-	-webkit-animation: flipIn 1.5s;
-	-moz-animation:    flipIn 1.5s;
-	-ms-animation:     flipIn 1.5s;
+	-webkit-animation: flipIn 1s;
+	-moz-animation:    flipIn 1s;
+	-ms-animation:     flipIn 1s;
 	transform-style: preserve-3d;
 	position:absolute;
 	width:300px;
 	height:$cardHeight;
 	z-index:100;
-	.back,.card{
-		position:absolute;
-		width:300px;
-		height: 100%;
-		border:1px solid black;
-		@include border-radius(15px);
-		@include backface-visibility(hidden);
-	}
-	
+	@include rotateZ(360deg);
 	.back{
 		@include rotateY(180deg);
 		z-index:10;
-		
-		@include background-image(
-			radial-gradient(0 0, black 12%, rgba(0,0,0,0) 16%),
-			radial-gradient(8px 8px, black 15%, rgba(0,0,0,0) 16%),
-			radial-gradient(0 1px, rgba(255,255,255,.1) 15%, rgba(0,0,0,0) 20%),
-			radial-gradient(8px 9px, rgba(255,255,255,.1) 15%, rgba(0,0,0,0) 20%)
-		);
-		
-		background-color:#282828;
-		background-size:16px 16px;
-		background-color:#282828;
-		background-size:16px 16px;
 	}
 	
 	.card{
