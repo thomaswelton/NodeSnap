@@ -10,7 +10,7 @@ var app = module.exports = express.createServer()
 	, io = require('socket.io').listen(app);
 
 io.set('log level',1);
-app.listen(80);
+app.listen(3000);
 
 var cardDeck = [];
 for(var i = 0; i < 52; i++){

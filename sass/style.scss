@@ -52,7 +52,7 @@ a {
 	}
 	
 	.pack{
-		@include rotateZ(-315deg);
+		@include rotateZ(-135deg);
 		width:300px;
 		height: $cardHeight;
 		top:0; left:0;
@@ -86,7 +86,7 @@ a {
 
 @mixin spinIn(){
   	 0%{
-		@include rotateZ(-315deg);
+		@include rotateZ(-135deg);
 		top:0;
 		left:0; 
 		margin-top:0;
@@ -135,18 +135,18 @@ a {
 	left:50%;
 	margin-left: floor((-1 * 300px) / 2);
 	
-	$base-rotation: -315deg + 180deg;
+	$base-rotation: -315deg - 45deg;
 	&:nth-child(1n){
 		@include rotateZ($base-rotation + 15deg);
 	}
 	&:nth-child(2n){
-		@include rotateZ($base-rotation + -5deg);
+		@include rotateZ($base-rotation + 10deg);
 	}
 	&:nth-child(3n){
-		@include rotateZ($base-rotation + 15deg);
+		@include rotateZ($base-rotation - 10deg);
 	}
 	&:nth-child(4n){
-		@include rotateZ($base-rotation + -15deg);
+		@include rotateZ($base-rotation - 15deg);
 	}
 	
 	&:nth-last-child(1),&:nth-last-child(2),&:nth-last-child(3){
