@@ -10,7 +10,6 @@ var app = module.exports = express.createServer()
 	, io = require('socket.io').listen(app);
 
 io.set('log level',1);
-app.listen(3000);
 
 var cardDeck = [];
 for(var i = 0; i < 52; i++){
@@ -105,5 +104,5 @@ app.configure('production', function(){
 app.get('/', routes.index);
 app.post('/', routes.index);
 
-app.listen(3000);
+app.listen(1338);
 console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);

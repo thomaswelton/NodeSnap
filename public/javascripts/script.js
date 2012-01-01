@@ -13,7 +13,7 @@ var Game = new Class({
 		this.setOptions(options);
 		this.el = el;
 		this.control = false;
-		this.currentCard = 0;
+		this.currentCard = null;
 		$('game').set('html','');
 		
 		var pack = new Element('div',{class: 'pack'});
@@ -65,10 +65,14 @@ var Game = new Class({
 			this.canControl(false);
 		}
 		
+		//demo
+		this.canControl(true);
+		
+		
 		var boundDeal = this.dealCard.bind(this);
 		$('deal').addEvent('click',boundDeal);
 		
-		this.renderCard(this.currentCard);
+		this.renderCard(0);
 		
 	},
 	canControl: function(bool){
@@ -76,11 +80,17 @@ var Game = new Class({
 		$('deal').disabled = (!bool);
 	},
 	dealCard: function(){
-		this.canControl(false);
+		//demo
+		//this.canControl(false);
+		
 		this.renderCard(this.currentCard + 1);
 		socket.emit('cardDealt',{card:this.currentCard});
 	},
 	renderCard: function(index){
+		if(this.currentCard == index) return;
+		
+		this.currentCard = index;
+		
 		var details = this.cardMap[this.options.cards[index]];
 		var numbers = [null,"one","two","three","four","five","six","seven","eight","nine","ten"];
 		var number = (details.number == 'a') ? "one" : numbers[details.number]; 
@@ -116,8 +126,6 @@ var Game = new Class({
 		card.injectInside(cardContainerY);
 		cardContainerY.injectInside(cardContainerX);
 		cardContainerX.injectInside($('game'));
-		
-		this.currentCard = index;
 	}
 });
 
@@ -126,7 +134,7 @@ socket.on('new-game', function (data) {
 });
 socket.on('dealCard', function (data) {
 	$('game').game.renderCard(data.card);
-	$('game').game.canControl(true);
+	//$('game').game.canControl(true);
 });
 
 socket.on('partner-disconnect', function () {

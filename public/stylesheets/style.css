@@ -132,22 +132,29 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 11, ../../sass/style.scss */
+/* line 11, ../sass/style.scss */
 html, body {
   height: 100%;
+  width: 100%;
 }
 
-/* line 14, ../../sass/style.scss */
+/* line 15, ../sass/style.scss */
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.6))), -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 80, color-stop(0%, rgba(255, 255, 255, 0.1)), color-stop(80%, rgba(255, 255, 255, 0))), url('/images/green-felt.jpg?1325443471') repeat;
+  background: -webkit-linear-gradient(top left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), -webkit-radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 80%), url('/images/green-felt.jpg?1325443471') repeat;
+  background: -moz-linear-gradient(top left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), -moz-radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 80%), url('/images/green-felt.jpg?1325443471') repeat;
+  background: -o-linear-gradient(top left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), -o-radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 80%), url('/images/green-felt.jpg?1325443471') repeat;
+  background: -ms-linear-gradient(top left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), -ms-radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 80%), url('/images/green-felt.jpg?1325443471') repeat;
+  background: linear-gradient(top left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 80%), url('/images/green-felt.jpg?1325443471') repeat;
 }
 
-/* line 18, ../../sass/style.scss */
+/* line 23, ../sass/style.scss */
 a {
   color: #00B7FF;
 }
 
-/* line 22, ../../sass/style.scss */
+/* line 27, ../sass/style.scss */
 #game {
   display: inline;
   float: left;
@@ -163,7 +170,7 @@ a {
 * html #game {
   overflow-x: hidden;
 }
-/* line 31, ../../sass/style.scss */
+/* line 37, ../sass/style.scss */
 #game .back, #game .card, #game .packEl {
   position: absolute;
   width: 300px;
@@ -178,7 +185,7 @@ a {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
-/* line 40, ../../sass/style.scss */
+/* line 46, ../sass/style.scss */
 #game .back, #game .packEl {
   background-image: -webkit-gradient(radial, 0 0, 0, 0 0, 16, color-stop(12%, #000000), color-stop(16%, rgba(0, 0, 0, 0))), -webkit-gradient(radial, 8px 8px, 0, 8px 8px, 16, color-stop(15%, #000000), color-stop(16%, rgba(0, 0, 0, 0))), -webkit-gradient(radial, 0 1px, 0, 0 1px, 20, color-stop(15%, rgba(255, 255, 255, 0.1)), color-stop(20%, rgba(0, 0, 0, 0))), -webkit-gradient(radial, 8px 9px, 0, 8px 9px, 20, color-stop(15%, rgba(255, 255, 255, 0.1)), color-stop(20%, rgba(0, 0, 0, 0)));
   background-image: -webkit-radial-gradient(0 0, #000000 12%, rgba(0, 0, 0, 0) 16%), -webkit-radial-gradient(8px 8px, #000000 15%, rgba(0, 0, 0, 0) 16%), -webkit-radial-gradient(0 1px, rgba(255, 255, 255, 0.1) 15%, rgba(0, 0, 0, 0) 20%), -webkit-radial-gradient(8px 9px, rgba(255, 255, 255, 0.1) 15%, rgba(0, 0, 0, 0) 20%);
@@ -191,7 +198,7 @@ a {
   background-color: #282828;
   background-size: 16px 16px;
 }
-/* line 54, ../../sass/style.scss */
+/* line 60, ../sass/style.scss */
 #game .pack {
   -moz-transform: rotate(-135deg);
   -webkit-transform: rotate(-135deg);
@@ -203,7 +210,7 @@ a {
   top: 0;
   left: 0;
 }
-/* line 62, ../../sass/style.scss */
+/* line 68, ../sass/style.scss */
 #game .pack .packEl:nth-last-child(1) {
   left: 8px;
   top: 8px;
@@ -213,19 +220,19 @@ a {
   -o-box-shadow: black 0px 0px 10px 1px;
   box-shadow: black 0px 0px 10px 1px;
 }
-/* line 68, ../../sass/style.scss */
+/* line 74, ../sass/style.scss */
 #game .pack .packEl:nth-last-child(2) {
   left: 6px;
   top: 6px;
   z-index: 2;
 }
-/* line 73, ../../sass/style.scss */
+/* line 79, ../sass/style.scss */
 #game .pack .packEl:nth-last-child(3) {
   left: 4px;
   top: 4px;
   z-index: 3;
 }
-/* line 78, ../../sass/style.scss */
+/* line 84, ../sass/style.scss */
 #game .pack .packEl:nth-last-child(4) {
   left: 2px;
   top: 2px;
@@ -233,7 +240,7 @@ a {
 }
 
 @-webkit-keyframes spinIn {
-  /* line 88, ../../sass/style.scss */
+  /* line 94, ../sass/style.scss */
   0% {
     -moz-transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
@@ -248,7 +255,7 @@ a {
 }
 
 @-moz-keyframes spinIn {
-  /* line 88, ../../sass/style.scss */
+  /* line 94, ../sass/style.scss */
   0% {
     -moz-transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
@@ -263,7 +270,7 @@ a {
 }
 
 @-ms-keyframes spinIn {
-  /* line 88, ../../sass/style.scss */
+  /* line 94, ../sass/style.scss */
   0% {
     -moz-transform: rotate(-135deg);
     -webkit-transform: rotate(-135deg);
@@ -278,13 +285,13 @@ a {
 }
 
 @-webkit-keyframes flipIn {
-  /* line 97, ../../sass/style.scss */
+  /* line 103, ../sass/style.scss */
   0%,15% {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
 
-  /* line 100, ../../sass/style.scss */
+  /* line 106, ../sass/style.scss */
   100% {
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
@@ -292,13 +299,13 @@ a {
 }
 
 @-moz-keyframes flipIn {
-  /* line 97, ../../sass/style.scss */
+  /* line 103, ../sass/style.scss */
   0%,15% {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
 
-  /* line 100, ../../sass/style.scss */
+  /* line 106, ../sass/style.scss */
   100% {
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
@@ -306,20 +313,20 @@ a {
 }
 
 @-ms-keyframes flipIn {
-  /* line 97, ../../sass/style.scss */
+  /* line 103, ../sass/style.scss */
   0%,15% {
     -webkit-transform: rotateY(180deg);
     transform: rotateY(180deg);
   }
 
-  /* line 100, ../../sass/style.scss */
+  /* line 106, ../sass/style.scss */
   100% {
     -webkit-transform: rotateY(0deg);
     transform: rotateY(0deg);
   }
 }
 
-/* line 124, ../../sass/style.scss */
+/* line 130, ../sass/style.scss */
 .cardContainerX {
   -moz-transition-property: all;
   -webkit-transition-property: all;
@@ -336,7 +343,7 @@ a {
   left: 50%;
   margin-left: -150px;
 }
-/* line 139, ../../sass/style.scss */
+/* line 145, ../sass/style.scss */
 .cardContainerX:nth-child(1n) {
   -moz-transform: rotate(-345deg);
   -webkit-transform: rotate(-345deg);
@@ -344,7 +351,7 @@ a {
   -ms-transform: rotate(-345deg);
   transform: rotate(-345deg);
 }
-/* line 142, ../../sass/style.scss */
+/* line 148, ../sass/style.scss */
 .cardContainerX:nth-child(2n) {
   -moz-transform: rotate(-350deg);
   -webkit-transform: rotate(-350deg);
@@ -352,7 +359,7 @@ a {
   -ms-transform: rotate(-350deg);
   transform: rotate(-350deg);
 }
-/* line 145, ../../sass/style.scss */
+/* line 151, ../sass/style.scss */
 .cardContainerX:nth-child(3n) {
   -moz-transform: rotate(-370deg);
   -webkit-transform: rotate(-370deg);
@@ -360,7 +367,7 @@ a {
   -ms-transform: rotate(-370deg);
   transform: rotate(-370deg);
 }
-/* line 148, ../../sass/style.scss */
+/* line 154, ../sass/style.scss */
 .cardContainerX:nth-child(4n) {
   -moz-transform: rotate(-375deg);
   -webkit-transform: rotate(-375deg);
@@ -368,7 +375,7 @@ a {
   -ms-transform: rotate(-375deg);
   transform: rotate(-375deg);
 }
-/* line 153, ../../sass/style.scss */
+/* line 159, ../sass/style.scss */
 .cardContainerX:nth-last-child(1) .card, .cardContainerX:nth-last-child(2) .card, .cardContainerX:nth-last-child(3) .card {
   -moz-box-shadow: black 0px 0px 10px 1px;
   -webkit-box-shadow: black 0px 0px 10px 1px;
@@ -376,7 +383,7 @@ a {
   box-shadow: black 0px 0px 10px 1px;
 }
 
-/* line 159, ../../sass/style.scss */
+/* line 165, ../sass/style.scss */
 .cardContainerY {
   -moz-transition-property: all;
   -webkit-transition-property: all;
@@ -396,37 +403,37 @@ a {
   -ms-transform: rotate(360deg);
   transform: rotate(360deg);
 }
-/* line 170, ../../sass/style.scss */
+/* line 176, ../sass/style.scss */
 .cardContainerY .back {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
   z-index: 10;
 }
-/* line 175, ../../sass/style.scss */
+/* line 181, ../sass/style.scss */
 .cardContainerY .card {
   z-index: 1;
   background: white;
 }
-/* line 178, ../../sass/style.scss */
+/* line 184, ../sass/style.scss */
 .cardContainerY .card.clubs, .cardContainerY .card.spades {
   color: black;
 }
-/* line 181, ../../sass/style.scss */
+/* line 187, ../sass/style.scss */
 .cardContainerY .card.diams, .cardContainerY .card.hearts {
   color: red;
 }
-/* line 185, ../../sass/style.scss */
+/* line 191, ../sass/style.scss */
 .cardContainerY .card .number {
   font-size: 4em;
   position: absolute;
   text-transform: uppercase;
 }
-/* line 190, ../../sass/style.scss */
+/* line 196, ../sass/style.scss */
 .cardContainerY .card .number:nth-of-type(1) {
   top: 5px;
   left: 20px;
 }
-/* line 194, ../../sass/style.scss */
+/* line 200, ../sass/style.scss */
 .cardContainerY .card .number:nth-of-type(2) {
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
@@ -436,7 +443,7 @@ a {
   bottom: 5px;
   right: 20px;
 }
-/* line 201, ../../sass/style.scss */
+/* line 207, ../sass/style.scss */
 .cardContainerY .card .name {
   font-size: 4em;
   text-align: center;
@@ -447,60 +454,60 @@ a {
   left: 0;
   line-height: 500px;
 }
-/* line 212, ../../sass/style.scss */
+/* line 218, ../sass/style.scss */
 .cardContainerY .card .suit {
   position: absolute;
   font-size: 8em;
 }
-/* line 216, ../../sass/style.scss */
+/* line 222, ../sass/style.scss */
 .cardContainerY .card .suit.spot1, .cardContainerY .card .suit.spot2, .cardContainerY .card .suit.spot3 {
   top: 50px;
 }
-/* line 219, ../../sass/style.scss */
+/* line 225, ../sass/style.scss */
 .cardContainerY .card .suit.spot4, .cardContainerY .card .suit.spot5, .cardContainerY .card .suit.spot6 {
   top: 0;
   line-height: 500px;
 }
-/* line 224, ../../sass/style.scss */
+/* line 230, ../sass/style.scss */
 .cardContainerY .card .suit.spot7, .cardContainerY .card .suit.spot8, .cardContainerY .card .suit.spot9 {
   bottom: 50px;
 }
-/* line 228, ../../sass/style.scss */
+/* line 234, ../sass/style.scss */
 .cardContainerY .card .suit.spot1, .cardContainerY .card .suit.spot4, .cardContainerY .card .suit.spot7 {
   left: 40px;
 }
-/* line 231, ../../sass/style.scss */
+/* line 237, ../sass/style.scss */
 .cardContainerY .card .suit.spot2, .cardContainerY .card .suit.spot5, .cardContainerY .card .suit.spot8, .cardContainerY .card .suit.spot10, .cardContainerY .card .suit.spot11 {
   left: 0;
   width: 100%;
   text-align: center;
 }
-/* line 236, ../../sass/style.scss */
+/* line 242, ../sass/style.scss */
 .cardContainerY .card .suit.spot3, .cardContainerY .card .suit.spot6, .cardContainerY .card .suit.spot9 {
   right: 40px;
 }
-/* line 239, ../../sass/style.scss */
+/* line 245, ../sass/style.scss */
 .cardContainerY .card .suit.spot10 {
   top: 130px;
 }
-/* line 242, ../../sass/style.scss */
+/* line 248, ../sass/style.scss */
 .cardContainerY .card .suit.spot11 {
   bottom: 130px;
 }
-/* line 248, ../../sass/style.scss */
+/* line 254, ../sass/style.scss */
 .cardContainerY .card.one .suit {
   font-size: 15em;
 }
-/* line 253, ../../sass/style.scss */
+/* line 259, ../sass/style.scss */
 .cardContainerY .card.two .suit {
   font-size: 13em;
 }
-/* line 258, ../../sass/style.scss */
+/* line 264, ../sass/style.scss */
 .cardContainerY .card.three .suit, .cardContainerY .card.four .suit, .cardContainerY .card.five .suit, .cardContainerY .card.six .suit {
   font-size: 10em;
 }
 
-/* line 266, ../../sass/style.scss */
+/* line 272, ../sass/style.scss */
 #deal {
   font-size: 3em;
   position: absolute;

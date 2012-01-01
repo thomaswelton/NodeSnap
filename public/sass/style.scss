@@ -10,9 +10,14 @@ $cardHeight: 500px;
 
 html,body{
 	height:100%;
+	width:100%;
 }
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+@include background(linear-gradient(top left, rgba(0,0,0,0.6), rgba(0,0,0,0),rgba(0,0,0,0.6)),
+                      radial-gradient(rgba(255,255,255,0.1), rgba(255,255,255,0) 80%),
+						image-url("green-felt.jpg") repeat);
 }
 
 a {
@@ -27,6 +32,7 @@ a {
 	height:100%;
 	min-height:584px;
 	position:relative;
+	
 	
 	.back,.card,.packEl{
 		position:absolute;
