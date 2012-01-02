@@ -39,7 +39,6 @@ function createGame(player1,player2){
 	io.sockets.in(gameId).emit('new-game', {room: gameId, start: player1, cards: cards, players: [players[player1],players[player2]]});
 	
 	var dealFunction = function (data) {
-		console.log(data);
 		if(typeof(io.sockets.sockets[players[this.id].partner]) !== 'undefined'){
 			io.sockets.sockets[players[this.id].partner].emit('dealCard',data);
 		}
@@ -50,8 +49,6 @@ function createGame(player1,player2){
 }
 
 function matchPlayer(player1){
-	console.log('find match '+player1);
-	console.log(waiting);
 	var player2 = waiting.shift();
 	if(player2 && typeof(io.sockets.sockets[player2]) !== 'undefined' && typeof(io.sockets.sockets[player1]) !== 'undefined'){
 		createGame(player1,player2);
@@ -61,7 +58,6 @@ function matchPlayer(player1){
 }
 
 io.sockets.on('connection', function (socket) {
-	
 	socket.on('player-ready', function (data) {
 		var player1 = socket.id;
 		players[player1] = {};

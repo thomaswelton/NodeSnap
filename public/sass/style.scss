@@ -79,24 +79,24 @@ a {
 		.packEl{
 			
 			&:nth-last-child(1){
-				left:8px;
-				top:8px;
+				left:-8px;
+				top:-8px;
 				z-index:1;
 				@include box-shadow(black 0px 0px 10px 1px);
 			}
 			&:nth-last-child(2){
-				left:6px;
-				top:6px;
+				left:-6px;
+				top:-6px;
 				z-index:2;
 			}
 			&:nth-last-child(3){
-				left:4px;
-				top:4px;
+				left:-4px;
+				top:-4px;
 				z-index:3;
 			}
 			&:nth-last-child(4){
-				left:2px;
-				top:2px;
+				left:-2px;
+				top:-2px;
 				z-index:4;
 			}
 		}
@@ -289,5 +289,14 @@ a {
 	left:50%;
 	width:300px;
 	margin-left:-1 * 150px;
-	
+}
+#ready{
+	font-size:3em;
+	position:absolute;
+	top:50%;
+	margin-top:-1 * floor(55px / 2);
+	left:50%;
+	height:55px;
+	width:300px;
+	margin-left:-1 * 150px;
 }

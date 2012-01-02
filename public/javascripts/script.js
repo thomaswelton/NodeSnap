@@ -6,14 +6,27 @@ var Game = new Class({
 		cards: null
 	},
 	destroy: function(){
-		$('deal').removeEvents('click');
-		this.el.innerHTML = 'partner left, finding game';
+		$('deal').destroy();
+		$$('.pack').destroy();
+		
+		var loadingEl = new Element('div',{class:'loading',html: "<h1>Partner Left, finding new game.</h1>"});
+		loadingEl.injectInside($('game'));
 	},
 	initialize: function(el,options){
 		this.setOptions(options);
 		this.el = el;
 		this.control = false;
-		this.currentCard = null;
+		this.currentCard = -1;
+		
+		$$('.cardContainerX').destroy();
+		
+		var pack = new Element('div',{class:"pack"});
+		for(var i=0; i<5;i++){
+			var packEl = new Element('div',{class:"packEl"});
+			packEl.injectInside(pack);
+		}
+		pack.injectInside($('game'));
+		
 		
 		this.el.getChildren('.loading').destroy();
 		this.cardMap = [];
@@ -48,8 +61,14 @@ var Game = new Class({
 								['1','3','4','6','7','9','10','11'],
 								['1','2','3','4','5','6','7','8','9'],
 								['1','2','3','4','6','7','8','9','10','11']];
+	
+		var dealButton = new Element('button',{type:'button',html:'Deal',id: 'deal'});
+		var boundDeal = this.dealCard.bind(this);
+		dealButton.addEvent('click',boundDeal);
+		dealButton.injectInside(this.el);
 		
-
+		$$('.pack').addEvent('click',boundDeal);
+		
 		if(socket.socket.sessionid === options.start){
 			this.canControl(true);
 		}else{
@@ -58,12 +77,6 @@ var Game = new Class({
 		
 		//demo
 		this.canControl(true);
-		
-		
-		var boundDeal = this.dealCard.bind(this);
-		$('deal').addEvent('click',boundDeal);
-		
-		this.renderCard(0);
 		
 	},
 	canControl: function(bool){
@@ -117,8 +130,26 @@ var Game = new Class({
 		card.injectInside(cardContainerY);
 		cardContainerY.injectInside(cardContainerX);
 		cardContainerX.injectInside($('game'));
+		
+		if(index > (51 - $$('.packEl').length)){
+			$$('.packEl')[0].destroy();
+		}
+		
+		if(index == 51){
+			this.canControl(false);
+		}
 	}
 });
+
+function fbLogin(success){
+	FB.login(function(response) {
+   		if (response.authResponse) {
+			success();
+		} else {
+	   		//Cancled login
+	   	}
+	 }, {scope: 'email'});
+}
 
 window.addEvent('domready',function(){
 	if(Browser.name !== "chrome"){
@@ -126,7 +157,36 @@ window.addEvent('domready',function(){
 		window.location = 'https://www.google.com/chrome/';
 	}else{
 		window.addEvent('fbAsyncInit',function(){
-			socket.emit('player-ready',{uid: FB.getUserID()})
+			var readyButton = new Element('button',{type:'button',html:'Go!',id:'ready'});
+			
+			var onLogin = function(){
+				readyButton.removeEvents();
+				readyButton.destroy();
+				socket.emit('player-ready',{uid: FB.getUserID()});
+				
+				var loadingEl = new Element('div',{class:'loading',html: "<h1>Waiting for partner</h1>"});
+				loadingEl.injectInside($('game'));
+			}.bind(this);
+			
+			readyButton.addEvent('click',function(){
+				fbLogin(onLogin);
+			});
+			
+			FB.getLoginStatus(function(response) {
+			  if (response.status === 'connected') {
+			    var uid = response.authResponse.userID;
+			    var accessToken = response.authResponse.accessToken;
+				readyButton.addEvent('click',function(){
+					onLogin();
+				});
+			    readyButton.injectInside($('game'));
+			
+			  } else if (response.status === 'not_authorized') {
+				readyButton.injectInside($('game'));
+			  } else {
+			    readyButton.injectInside($('game'));
+			  }
+			 });
 		});
 	
 		socket.on('new-game', function (data) {
