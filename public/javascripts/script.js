@@ -16,6 +16,7 @@ var Game = new Class({
 		this.setOptions(options);
 		this.el = el;
 		this.control = false;
+		this.cards = options.cards;
 		this.currentCard = -1;
 		
 		$$('.cardContainerX').destroy();
@@ -68,6 +69,23 @@ var Game = new Class({
 		dealButton.injectInside(this.el);
 		
 		$$('.pack').addEvent('click',boundDeal);
+		window.addEvent( 'keypress', function(e){ 
+			if(e.key == 'space'){
+				new Event(e).stop();
+				boundDeal();
+			}
+		});
+		
+		var boundSnap = this.snap.bind(this);
+		var snapButton = new Element('button',{type:'button',html:'Snap',id: 'snap'});
+		snapButton.addEvent('click',boundSnap);
+		snapButton.injectInside(this.el);
+		window.addEvent( 'keypress', function(e){ 
+			if(e.key == 'enter'){
+				new Event(e).stop();
+				boundSnap();
+			}
+		});
 		
 		if(socket.socket.sessionid === options.start){
 			this.canControl(true);
@@ -82,6 +100,25 @@ var Game = new Class({
 	canControl: function(bool){
 		this.control = bool;
 		$('deal').disabled = (!bool);
+	},
+	snap: function(){
+		if(this.currentCard < 1){
+			console.log('snap fail');
+			return;
+		}
+		
+		var card1 = this.cardMap[this.cards[this.currentCard]];
+		var card2 = this.cardMap[this.cards[this.currentCard - 1]];
+		
+		console.log('User called snap on '+card1.number+' matching '+card2.number);
+		console.log(card1);
+		console.log(card2);
+		
+		if(card1.number == card2.number){
+			console.log('snap');
+		}else{
+			console.log('snap fail');
+		}
 	},
 	dealCard: function(){
 		//demo
@@ -144,77 +181,83 @@ var Game = new Class({
 function fbLogin(success){
 	FB.login(function(response) {
    		if (response.authResponse) {
+			console.log('FB login success');
 			success();
 		} else {
 	   		//Cancled login
+			console.log('User canceled FB login');
 	   	}
-	 }, {scope: 'email'});
+	 }, {scope: ''});
 }
 
 window.addEvent('domready',function(){
 	if(Browser.name !== "chrome"){
-		document.body.destroy();
-		window.location = 'https://www.google.com/chrome/';
-	}else{
-		window.addEvent('fbAsyncInit',function(){
-			var readyButton = new Element('button',{type:'button',html:'Go!',id:'ready'});
+		//document.body.destroy();
+		//window.location = 'https://www.google.com/chrome/';
+		//return;
+	}
+	
+	console.log('User Visited Page');
+	window.addEvent('fbAsyncInit',function(){
+		var readyButton = $$('button.ready');
+		
+		var onLogin = function(){
+			readyButton.removeEvents();
+			readyButton.destroy();
+			$$('.welcome').destroy();
+			console.log('SOCKET-SEND: player-ready');
+			socket.emit('player-ready',{uid: FB.getUserID()});
 			
-			var onLogin = function(){
-				readyButton.removeEvents();
-				readyButton.destroy();
-				socket.emit('player-ready',{uid: FB.getUserID()});
-				
-				var loadingEl = new Element('div',{class:'loading',html: "<h1>Waiting for partner</h1>"});
-				loadingEl.injectInside($('game'));
-			}.bind(this);
-			
+			var loadingEl = new Element('div',{class:'loading',html: "<h1>Waiting for partner</h1>"});
+			loadingEl.injectInside($('game'));
+		}.bind(this);
+		
+		FB.getLoginStatus(function(response) {
+		  if (response.status === 'connected') {
+		    var uid = response.authResponse.userID;
+		    var accessToken = response.authResponse.accessToken;
+		
+			console.log('Known user '+uid);
 			readyButton.addEvent('click',function(){
+				console.log('Known user click ready button, no login required');
+				onLogin();
+			});
+		  } else {
+		    console.log('Unknown user with no FB access token');
+			readyButton.addEvent('click',function(){
+				console.log('Unknown user click ready button, must use FB login');
 				fbLogin(onLogin);
 			});
-			
-			FB.getLoginStatus(function(response) {
-			  if (response.status === 'connected') {
-			    var uid = response.authResponse.userID;
-			    var accessToken = response.authResponse.accessToken;
-				readyButton.addEvent('click',function(){
-					onLogin();
-				});
-			    readyButton.injectInside($('game'));
-			
-			  } else if (response.status === 'not_authorized') {
-				readyButton.injectInside($('game'));
-			  } else {
-			    readyButton.injectInside($('game'));
-			  }
-			 });
-		});
-	
-		socket.on('new-game', function (data) {
-			console.log(data);
-			$('game').game = new Game($('game'),data);
-		});
-		socket.on('dealCard', function (data) {
-			$('game').game.renderCard(data.card);
-			//$('game').game.canControl(true);
-		});
+		  }
+		 });
+	});
 
-		socket.on('partner-disconnect', function () {
-			$('game').game.destroy();
-			delete $('game').game;
-		});
-	}
+	socket.on('new-game', function (data) {
+		console.log('New game started, here is the game data');
+		console.log(data);
+		$('game').game = new Game($('game'),data);
+	});
+	socket.on('dealCard', function (data) {
+		$('game').game.renderCard(data.card);
+		//$('game').game.canControl(true);
+	});
+
+	socket.on('partner-disconnect', function () {
+		console.log('Partner left');
+		$('game').game.destroy();
+		delete $('game').game;
+	});
 });
 
 function resizeCanvas(){
 	FB.Canvas.getPageInfo(function(info) {
 		$('game').setStyle('height',info.clientHeight - 120);
+		FB.Canvas.setAutoResize(false);
 	});
 }
 
 window.addEvent('fbAsyncInit',function(){
 	resizeCanvas();
-	
-	
 });
 
 

@@ -105,6 +105,9 @@ app.configure('production', function(){
 app.get('/', routes.index);
 app.post('/', routes.index);
 
+app.get('/solitare', routes.solitare);
+app.post('/solitare', routes.solitare);
+
 app.get('/channel.html', function(req,res){
 	var cache_expire = 60*60*24*365;
 	var now = new Date();

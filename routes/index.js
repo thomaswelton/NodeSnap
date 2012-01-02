@@ -44,6 +44,8 @@ exports.index = function(req, res){
 			}
 		});
 	}
-	
-  
+};
+
+exports.solitare = function(req, res){
+	res.render('solitare', { title: 'Node Solitare!' })
 };

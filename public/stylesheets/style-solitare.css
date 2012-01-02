@@ -132,13 +132,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/* line 11, ../sass/style.scss */
+/* line 14, ../sass/style-solitare.scss */
 .noise {
   position: relative;
   z-index: 1;
 }
 
-/* line 16, ../sass/style.scss */
+/* line 19, ../sass/style-solitare.scss */
 .noise:before, .body-noise:before {
   content: "";
   position: absolute;
@@ -150,14 +150,14 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   background-image: url(data:image/png;base64,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);
 }
 
-/* line 28, ../sass/style.scss */
+/* line 31, ../sass/style-solitare.scss */
 html, body {
   height: 100%;
   min-height: 800px;
   width: 100%;
 }
 
-/* line 33, ../sass/style.scss */
+/* line 36, ../sass/style-solitare.scss */
 body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, rgba(0, 0, 0, 0.6)), color-stop(50%, rgba(0, 0, 0, 0)), color-stop(100%, rgba(0, 0, 0, 0.6))), -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 80, color-stop(0%, rgba(255, 255, 255, 0.1)), color-stop(80%, rgba(255, 255, 255, 0))), #296c06;
@@ -168,12 +168,12 @@ body {
   background: linear-gradient(top left, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), radial-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0) 80%), #296c06;
 }
 
-/* line 39, ../sass/style.scss */
+/* line 42, ../sass/style-solitare.scss */
 a {
   color: #00B7FF;
 }
 
-/* line 43, ../sass/style.scss */
+/* line 46, ../sass/style-solitare.scss */
 #game {
   display: inline;
   float: left;
@@ -189,7 +189,7 @@ a {
 * html #game {
   overflow-x: hidden;
 }
-/* line 52, ../sass/style.scss */
+/* line 55, ../sass/style-solitare.scss */
 #game .loading {
   display: block;
   width: 100%;
@@ -197,16 +197,16 @@ a {
   margin: 40px auto;
   position: absolute;
 }
-/* line 58, ../sass/style.scss */
+/* line 61, ../sass/style-solitare.scss */
 #game .loading h1 {
   font-size: 5em;
   color: white;
 }
-/* line 65, ../sass/style.scss */
+/* line 68, ../sass/style-solitare.scss */
 #game .back, #game .card, #game .packEl {
   position: absolute;
-  width: 300px;
-  height: 500px;
+  width: 148px;
+  height: 265px;
   border: 1px solid #fff;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -215,7 +215,7 @@ a {
   -khtml-border-radius: 15px;
   border-radius: 15px;
 }
-/* line 73, ../sass/style.scss */
+/* line 76, ../sass/style-solitare.scss */
 #game .back, #game .packEl {
   background-image: -webkit-gradient(radial, 0 0, 0, 0 0, 16, color-stop(12%, #000000), color-stop(16%, rgba(0, 0, 0, 0))), -webkit-gradient(radial, 8px 8px, 0, 8px 8px, 16, color-stop(15%, #000000), color-stop(16%, rgba(0, 0, 0, 0))), -webkit-gradient(radial, 0 1px, 0, 0 1px, 20, color-stop(15%, rgba(255, 255, 255, 0.1)), color-stop(20%, rgba(0, 0, 0, 0))), -webkit-gradient(radial, 8px 9px, 0, 8px 9px, 20, color-stop(15%, rgba(255, 255, 255, 0.1)), color-stop(20%, rgba(0, 0, 0, 0)));
   background-image: -webkit-radial-gradient(0 0, #000000 12%, rgba(0, 0, 0, 0) 16%), -webkit-radial-gradient(8px 8px, #000000 15%, rgba(0, 0, 0, 0) 16%), -webkit-radial-gradient(0 1px, rgba(255, 255, 255, 0.1) 15%, rgba(0, 0, 0, 0) 20%), -webkit-radial-gradient(8px 9px, rgba(255, 255, 255, 0.1) 15%, rgba(0, 0, 0, 0) 20%);
@@ -228,193 +228,25 @@ a {
   background-color: #282828;
   background-size: 16px 16px;
 }
-/* line 87, ../sass/style.scss */
-#game .pack {
-  -moz-transform: rotate(-135deg);
-  -webkit-transform: rotate(-135deg);
-  -o-transform: rotate(-135deg);
-  -ms-transform: rotate(-135deg);
-  transform: rotate(-135deg);
-  width: 300px;
-  height: 500px;
-  top: 0;
-  left: 0;
+/* line 90, ../sass/style-solitare.scss */
+#game #pack-container {
+  display: inline;
+  float: left;
+  margin-right: 9px;
+  margin: 20px 10px 0 20px;
+  width: 420px;
+  position: relative;
 }
-/* line 95, ../sass/style.scss */
-#game .pack .packEl:nth-last-child(1) {
-  left: -8px;
-  top: -8px;
-  z-index: 1;
-  -moz-box-shadow: black 0px 0px 10px 1px;
-  -webkit-box-shadow: black 0px 0px 10px 1px;
-  -o-box-shadow: black 0px 0px 10px 1px;
-  box-shadow: black 0px 0px 10px 1px;
+/* line 147, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #game #pack-container {
+  overflow-x: hidden;
 }
-/* line 101, ../sass/style.scss */
-#game .pack .packEl:nth-last-child(2) {
-  left: -6px;
-  top: -6px;
-  z-index: 2;
-}
-/* line 106, ../sass/style.scss */
-#game .pack .packEl:nth-last-child(3) {
-  left: -4px;
-  top: -4px;
-  z-index: 3;
-}
-/* line 111, ../sass/style.scss */
-#game .pack .packEl:nth-last-child(4) {
-  left: -2px;
-  top: -2px;
-  z-index: 4;
-}
-
-@-webkit-keyframes spinIn {
-  /* line 121, ../sass/style.scss */
-  0% {
-    -moz-transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-    -o-transform: rotate(-135deg);
-    -ms-transform: rotate(-135deg);
-    transform: rotate(-135deg);
-    top: 0;
-    left: 0;
-    margin-top: 0;
-    margin-left: 0;
-  }
-}
-
-@-moz-keyframes spinIn {
-  /* line 121, ../sass/style.scss */
-  0% {
-    -moz-transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-    -o-transform: rotate(-135deg);
-    -ms-transform: rotate(-135deg);
-    transform: rotate(-135deg);
-    top: 0;
-    left: 0;
-    margin-top: 0;
-    margin-left: 0;
-  }
-}
-
-@-ms-keyframes spinIn {
-  /* line 121, ../sass/style.scss */
-  0% {
-    -moz-transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
-    -o-transform: rotate(-135deg);
-    -ms-transform: rotate(-135deg);
-    transform: rotate(-135deg);
-    top: 0;
-    left: 0;
-    margin-top: 0;
-    margin-left: 0;
-  }
-}
-
-@-webkit-keyframes flipIn {
-  /* line 130, ../sass/style.scss */
-  0% {
-    -webkit-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-  }
-
-  /* line 133, ../sass/style.scss */
-  60% {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-  }
-}
-
-@-moz-keyframes flipIn {
-  /* line 130, ../sass/style.scss */
-  0% {
-    -webkit-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-  }
-
-  /* line 133, ../sass/style.scss */
-  60% {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-  }
-}
-
-@-ms-keyframes flipIn {
-  /* line 130, ../sass/style.scss */
-  0% {
-    -webkit-transform: rotateY(-180deg);
-    transform: rotateY(-180deg);
-  }
-
-  /* line 133, ../sass/style.scss */
-  60% {
-    -webkit-transform: rotateY(0deg);
-    transform: rotateY(0deg);
-  }
-}
-
-/* line 157, ../sass/style.scss */
-.cardContainerX {
-  -moz-transition-property: all;
-  -webkit-transition-property: all;
-  -o-transition-property: all;
-  transition-property: all;
-  -webkit-animation: spinIn 2s;
-  -moz-animation: spinIn 2s;
-  -ms-animation: spinIn 2s;
+/* line 98, ../sass/style-solitare.scss */
+#game #pack-container #pack-playable {
+  z-index: 20;
   position: absolute;
-  width: 300px;
-  height: 500px;
-  top: 50%;
-  margin-top: -250px;
-  left: 50%;
-  margin-left: -150px;
-}
-/* line 172, ../sass/style.scss */
-.cardContainerX:nth-child(1n) {
-  -moz-transform: rotate(-345deg);
-  -webkit-transform: rotate(-345deg);
-  -o-transform: rotate(-345deg);
-  -ms-transform: rotate(-345deg);
-  transform: rotate(-345deg);
-}
-/* line 175, ../sass/style.scss */
-.cardContainerX:nth-child(2n) {
-  -moz-transform: rotate(-350deg);
-  -webkit-transform: rotate(-350deg);
-  -o-transform: rotate(-350deg);
-  -ms-transform: rotate(-350deg);
-  transform: rotate(-350deg);
-}
-/* line 178, ../sass/style.scss */
-.cardContainerX:nth-child(3n) {
-  -moz-transform: rotate(-370deg);
-  -webkit-transform: rotate(-370deg);
-  -o-transform: rotate(-370deg);
-  -ms-transform: rotate(-370deg);
-  transform: rotate(-370deg);
-}
-/* line 181, ../sass/style.scss */
-.cardContainerX:nth-child(4n) {
-  -moz-transform: rotate(-375deg);
-  -webkit-transform: rotate(-375deg);
-  -o-transform: rotate(-375deg);
-  -ms-transform: rotate(-375deg);
-  transform: rotate(-375deg);
-}
-/* line 186, ../sass/style.scss */
-.cardContainerX:nth-last-child(1) .card, .cardContainerX:nth-last-child(2) .card, .cardContainerX:nth-last-child(3) .card, .cardContainerX:first-child .card {
-  -moz-box-shadow: black 0px 0px 10px 1px;
-  -webkit-box-shadow: black 0px 0px 10px 1px;
-  -o-box-shadow: black 0px 0px 10px 1px;
-  box-shadow: black 0px 0px 10px 1px;
-}
-
-/* line 192, ../sass/style.scss */
-.cardContainerY {
+  top: 0;
+  right: 0;
   -moz-transition-property: all;
   -webkit-transition-property: all;
   -o-transition-property: all;
@@ -425,14 +257,144 @@ a {
   -webkit-animation: flipIn 2s;
   -moz-animation: flipIn 2s;
   -ms-animation: flipIn 2s;
-  position: absolute;
-  width: 300px;
-  height: 500px;
-  z-index: 100;
-  -webkit-transform: rotateY(0deg);
-  transform: rotateY(0deg);
+  margin-left: 0;
 }
-/* line 205, ../sass/style.scss */
+/* line 112, ../sass/style-solitare.scss */
+#game #pack-container #pack-playable .cardContainerX {
+  -moz-transition-property: all;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  top: 5px;
+  -webkit-animation: spinIn 2s;
+  -moz-animation: spinIn 2s;
+  -ms-animation: spinIn 2s;
+}
+/* line 119, ../sass/style-solitare.scss */
+#game #pack-container #pack-playable .cardContainerX:nth-child(1n) {
+  right: 0;
+  z-index: 13;
+}
+/* line 123, ../sass/style-solitare.scss */
+#game #pack-container #pack-playable .cardContainerX:nth-child(2n) {
+  right: 50px;
+  z-index: 12;
+}
+/* line 127, ../sass/style-solitare.scss */
+#game #pack-container #pack-playable .cardContainerX:nth-child(3n) {
+  right: 100px;
+  z-index: 11;
+}
+/* line 134, ../sass/style-solitare.scss */
+#game #pack-container .pack {
+  display: inline;
+  float: left;
+  margin-right: 9px;
+  position: relative;
+  width: 150px;
+  height: 267px;
+  z-index: 10;
+}
+/* line 147, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
+* html #game #pack-container .pack {
+  overflow-x: hidden;
+}
+/* line 141, ../sass/style-solitare.scss */
+#game #pack-container .pack .packEl:nth-last-child(1) {
+  left: 8px;
+  top: 8px;
+  z-index: 1;
+  -moz-box-shadow: black 0px 0px 10px 1px;
+  -webkit-box-shadow: black 0px 0px 10px 1px;
+  -o-box-shadow: black 0px 0px 10px 1px;
+  box-shadow: black 0px 0px 10px 1px;
+}
+/* line 147, ../sass/style-solitare.scss */
+#game #pack-container .pack .packEl:nth-last-child(2) {
+  left: 6px;
+  top: 6px;
+  z-index: 2;
+}
+/* line 152, ../sass/style-solitare.scss */
+#game #pack-container .pack .packEl:nth-last-child(3) {
+  left: 4px;
+  top: 4px;
+  z-index: 3;
+}
+/* line 157, ../sass/style-solitare.scss */
+#game #pack-container .pack .packEl:nth-last-child(4) {
+  left: 2px;
+  top: 2px;
+  z-index: 4;
+}
+
+@-webkit-keyframes spinIn {
+  /* line 168, ../sass/style-solitare.scss */
+  0% {
+    left: 0;
+  }
+}
+
+@-moz-keyframes spinIn {
+  /* line 168, ../sass/style-solitare.scss */
+  0% {
+    left: 0;
+  }
+}
+
+@-ms-keyframes spinIn {
+  /* line 168, ../sass/style-solitare.scss */
+  0% {
+    left: 0;
+  }
+}
+
+@-webkit-keyframes flipIn {
+  /* line 173, ../sass/style-solitare.scss */
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+}
+
+@-moz-keyframes flipIn {
+  /* line 173, ../sass/style-solitare.scss */
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+}
+
+@-ms-keyframes flipIn {
+  /* line 173, ../sass/style-solitare.scss */
+  0% {
+    -webkit-transform: rotateY(180deg);
+    transform: rotateY(180deg);
+  }
+}
+
+/* line 197, ../sass/style-solitare.scss */
+.cardContainerX {
+  position: absolute;
+  width: 150px;
+  height: 267px;
+}
+/* line 203, ../sass/style-solitare.scss */
+.cardContainerX:nth-last-child(1) .card, .cardContainerX:nth-last-child(2) .card, .cardContainerX:nth-last-child(3) .card, .cardContainerX:first-child .card {
+  -moz-box-shadow: black 0px 0px 10px 1px;
+  -webkit-box-shadow: black 0px 0px 10px 1px;
+  -o-box-shadow: black 0px 0px 10px 1px;
+  box-shadow: black 0px 0px 10px 1px;
+}
+
+/* line 209, ../sass/style-solitare.scss */
+.cardContainerY {
+  position: absolute;
+  width: 150px;
+  height: 267px;
+  z-index: 100;
+}
+/* line 215, ../sass/style-solitare.scss */
 .cardContainerY .back {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -440,33 +402,33 @@ a {
   transform: rotateY(180deg);
   z-index: 10;
 }
-/* line 211, ../sass/style.scss */
+/* line 221, ../sass/style-solitare.scss */
 .cardContainerY .card {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 1;
   background: white;
 }
-/* line 215, ../sass/style.scss */
+/* line 225, ../sass/style-solitare.scss */
 .cardContainerY .card.clubs, .cardContainerY .card.spades {
   color: black;
 }
-/* line 218, ../sass/style.scss */
+/* line 228, ../sass/style-solitare.scss */
 .cardContainerY .card.diams, .cardContainerY .card.hearts {
   color: red;
 }
-/* line 222, ../sass/style.scss */
+/* line 232, ../sass/style-solitare.scss */
 .cardContainerY .card .number {
-  font-size: 4em;
+  font-size: 2em;
   position: absolute;
   text-transform: uppercase;
 }
-/* line 227, ../sass/style.scss */
+/* line 237, ../sass/style-solitare.scss */
 .cardContainerY .card .number:nth-of-type(1) {
   top: 5px;
   left: 20px;
 }
-/* line 231, ../sass/style.scss */
+/* line 241, ../sass/style-solitare.scss */
 .cardContainerY .card .number:nth-of-type(2) {
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
@@ -476,7 +438,7 @@ a {
   bottom: 5px;
   right: 20px;
 }
-/* line 238, ../sass/style.scss */
+/* line 248, ../sass/style-solitare.scss */
 .cardContainerY .card .name {
   font-size: 4em;
   text-align: center;
@@ -485,62 +447,62 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  line-height: 500px;
+  line-height: 267px;
 }
-/* line 249, ../sass/style.scss */
+/* line 259, ../sass/style-solitare.scss */
 .cardContainerY .card .suit {
   position: absolute;
-  font-size: 8em;
+  font-size: 4em;
 }
-/* line 253, ../sass/style.scss */
+/* line 263, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot1, .cardContainerY .card .suit.spot2, .cardContainerY .card .suit.spot3 {
   top: 50px;
 }
-/* line 256, ../sass/style.scss */
+/* line 266, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot4, .cardContainerY .card .suit.spot5, .cardContainerY .card .suit.spot6 {
   top: 0;
-  line-height: 500px;
+  line-height: 267px;
 }
-/* line 261, ../sass/style.scss */
+/* line 271, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot7, .cardContainerY .card .suit.spot8, .cardContainerY .card .suit.spot9 {
   bottom: 50px;
 }
-/* line 265, ../sass/style.scss */
+/* line 275, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot1, .cardContainerY .card .suit.spot4, .cardContainerY .card .suit.spot7 {
   left: 40px;
 }
-/* line 268, ../sass/style.scss */
+/* line 278, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot2, .cardContainerY .card .suit.spot5, .cardContainerY .card .suit.spot8, .cardContainerY .card .suit.spot10, .cardContainerY .card .suit.spot11 {
   left: 0;
   width: 100%;
   text-align: center;
 }
-/* line 273, ../sass/style.scss */
+/* line 283, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot3, .cardContainerY .card .suit.spot6, .cardContainerY .card .suit.spot9 {
   right: 40px;
 }
-/* line 276, ../sass/style.scss */
+/* line 286, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot10 {
   top: 130px;
 }
-/* line 279, ../sass/style.scss */
+/* line 289, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot11 {
   bottom: 130px;
 }
-/* line 285, ../sass/style.scss */
+/* line 295, ../sass/style-solitare.scss */
 .cardContainerY .card.one .suit {
-  font-size: 15em;
+  font-size: 7em;
 }
-/* line 290, ../sass/style.scss */
+/* line 300, ../sass/style-solitare.scss */
 .cardContainerY .card.two .suit {
-  font-size: 13em;
+  font-size: 6em;
 }
-/* line 295, ../sass/style.scss */
+/* line 305, ../sass/style-solitare.scss */
 .cardContainerY .card.three .suit, .cardContainerY .card.four .suit, .cardContainerY .card.five .suit, .cardContainerY .card.six .suit {
-  font-size: 10em;
+  font-size: 5em;
 }
 
-/* line 303, ../sass/style.scss */
+/* line 313, ../sass/style-solitare.scss */
 #deal {
   font-size: 3em;
   position: absolute;
@@ -550,7 +512,7 @@ a {
   margin-left: -150px;
 }
 
-/* line 311, ../sass/style.scss */
+/* line 321, ../sass/style-solitare.scss */
 #snap {
   font-size: 3em;
   position: absolute;
@@ -560,7 +522,7 @@ a {
   margin-right: -150px;
 }
 
-/* line 319, ../sass/style.scss */
+/* line 329, ../sass/style-solitare.scss */
 .ready {
   font-size: 3em;
   position: absolute;

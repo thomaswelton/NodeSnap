@@ -1,17 +1,17 @@
-!!!
+!!! html
 html
 	head
 		title= title
-		link(rel='stylesheet', href='/stylesheets/style.css')
+		link(rel='stylesheet', href='/stylesheets/style-solitare.css')
 		script(src='/socket.io/socket.io.js')
 		script(src='/javascripts/mootools-core.js')
-	body!= body
+	body.noise!= body
 		#fb-root
 		script
 			window.fbAsyncInit = function() {
 				FB._https = (window.location.protocol == "https:");
 				FB.init({
-					appId : '301450633231571', channelUrl : '//'+window.location.host+'/channel.html', status	: true, cookie	: true, xfbml	: true
+					appId : '301450633231571', channelUrl : '//'+window.location.host+'/channel.html', status	: true, cookie	: true, xfbml	: false
 				});
 				FB.Canvas.setAutoResize();
 				window.fireEvent('fbAsyncInit')

@@ -6,7 +6,10 @@
 @import "compass/reset";
 @import "base.scss";
 
-$cardHeight: 500px;
+
+$cardWidth: 150px;
+$cardHeight: round((16/9) * $cardWidth); 
+
 
 .noise {
 	position: relative;
@@ -64,8 +67,8 @@ a {
 	
 	.back,.card,.packEl{
 		position:absolute;
-		width:300px;
-		height: $cardHeight;
+		width:$cardWidth - 2px;
+		height: $cardHeight - 2px;
 		border:1px solid #fff;
 		@include border-radius(15px);
 	}
@@ -84,34 +87,78 @@ a {
 		background-size:16px 16px;
 	}
 	
-	.pack{
-		@include rotateZ(-135deg);
-		width:300px;
-		height: $cardHeight;
-		top:0; left:0;
+	#pack-container{
+		@include column-base;
+		margin:20px 10px 0 20px;
+		$pack-width:$cardWidth +  20px + $cardWidth + floor(($cardWidth/3) * 2);
+		width: $pack-width;
+		position:relative;
 		
-		.packEl{
+		
+		#pack-playable{
+			z-index:20;
+			position:absolute;
+			top:0;
+			right:0;
 			
-			&:nth-last-child(1){
-				left:-8px;
-				top:-8px;
-				z-index:1;
-				@include box-shadow(black 0px 0px 10px 1px);
+			@include transition-property('all');
+			@include backface-visibility(hidden);
+			transform-style: preserve-3d;
+			-webkit-animation: flipIn 2s;
+			-moz-animation:    flipIn 2s;
+			-ms-animation:     flipIn 2s;
+			margin-left:0;
+			
+		 	.cardContainerX{
+				@include transition-property('all');
+				top:5px;
+				-webkit-animation: spinIn 2s;
+				-moz-animation:    spinIn 2s;
+				-ms-animation:     spinIn 2s;
+				
+				&:nth-child(1n){
+					right:0;
+					z-index:13;
+				}
+				&:nth-child(2n){
+					right:floor(($cardWidth/3) * 1);
+					z-index:12;
+				}
+				&:nth-child(3n){
+					right:floor(($cardWidth/3) * 2);
+					z-index:11;
+				}
 			}
-			&:nth-last-child(2){
-				left:-6px;
-				top:-6px;
-				z-index:2;
-			}
-			&:nth-last-child(3){
-				left:-4px;
-				top:-4px;
-				z-index:3;
-			}
-			&:nth-last-child(4){
-				left:-2px;
-				top:-2px;
-				z-index:4;
+		}
+		
+		.pack{
+			@include column-base;
+			position:relative;
+			width: $cardWidth;
+			height: $cardHeight;
+			z-index:10;
+			.packEl{
+				&:nth-last-child(1){
+					left:8px;
+					top:8px;
+					z-index:1;
+					@include box-shadow(black 0px 0px 10px 1px);
+				}
+				&:nth-last-child(2){
+					left:6px;
+					top:6px;
+					z-index:2;
+				}
+				&:nth-last-child(3){
+					left:4px;
+					top:4px;
+					z-index:3;
+				}
+				&:nth-last-child(4){
+					left:2px;
+					top:2px;
+					z-index:4;
+				}
 			}
 		}
 	}
@@ -119,19 +166,12 @@ a {
 
 @mixin spinIn(){
   	0%{
-		@include rotateZ(-135deg);
-		top:0;
-		left:0; 
-		margin-top:0;
-		margin-left:0;
+		left:0;
 	}
 }
 @mixin flipIn(){
 	0%{
-		@include rotateY(-180deg);
-	}
-	60%{
-		@include rotateY(0deg);
+		@include rotateY(180deg);
 	}
 }
 
@@ -155,32 +195,9 @@ a {
 }
 
 .cardContainerX{
-	@include transition-property('all');
-	-webkit-animation: spinIn 2s;
-    -moz-animation:    spinIn 2s;
-    -ms-animation:     spinIn 2s;
-	
 	position:absolute;
-	width:300px;
+	width:$cardWidth;
 	height:$cardHeight;
-	top:50%;
-	margin-top: floor((-1 * 500px) / 2);
-	left:50%;
-	margin-left: floor((-1 * 300px) / 2);
-	
-	$base-rotation: -315deg - 45deg;
-	&:nth-child(1n){
-		@include rotateZ($base-rotation + 15deg);
-	}
-	&:nth-child(2n){
-		@include rotateZ($base-rotation + 10deg);
-	}
-	&:nth-child(3n){
-		@include rotateZ($base-rotation - 10deg);
-	}
-	&:nth-child(4n){
-		@include rotateZ($base-rotation - 15deg);
-	}
 	
 	&:nth-last-child(1),&:nth-last-child(2),&:nth-last-child(3),&:first-child{
 		.card{
@@ -190,17 +207,10 @@ a {
 	
 }
 .cardContainerY{
-	@include transition-property('all');
-	@include backface-visibility(hidden);
-	transform-style: preserve-3d;
-	-webkit-animation: flipIn 2s;
-	-moz-animation:    flipIn 2s;
-	-ms-animation:     flipIn 2s;
 	position:absolute;
-	width:300px;
+	width:$cardWidth;
 	height:$cardHeight;
 	z-index:100;
-	@include rotateY(0deg);
 
 	.back{
 		@include backface-visibility(hidden);
@@ -220,7 +230,7 @@ a {
 		}
 	
 		.number{
-			font-size:4em;	
+			font-size:2em;	
 			position:absolute;
 			text-transform:uppercase;
 		
@@ -248,7 +258,7 @@ a {
 	
 		.suit{
 			position:absolute;
-			font-size:8em;
+			font-size:4em;
 		
 			&.spot1,&.spot2,&.spot3{
 				top:50px;
@@ -283,17 +293,17 @@ a {
 	
 		&.one{
 			.suit{
-				font-size:15em;
+				font-size:7em;
 			}
 		}
 		&.two{
 			.suit{
-				font-size:13em;
+				font-size:6em;
 			}
 		}
 		&.three,&.four,&.five,&.six{
 			.suit{
-				font-size:10em;
+				font-size:5em;
 			}
 		}
 	}
