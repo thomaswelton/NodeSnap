@@ -179,10 +179,8 @@ a {
   float: left;
   margin-right: 9px;
   margin-right: 0;
-  width: 100%;
-  min-width: 584px;
-  height: 100%;
-  min-height: 800px;
+  width: 1020px;
+  height: 700px;
   position: relative;
 }
 /* line 147, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
@@ -205,8 +203,8 @@ a {
 /* line 68, ../sass/style-solitare.scss */
 #game .back, #game .card, #game .packEl {
   position: absolute;
-  width: 148px;
-  height: 265px;
+  width: 98px;
+  height: 176px;
   border: 1px solid #fff;
   -moz-border-radius: 15px;
   -webkit-border-radius: 15px;
@@ -234,7 +232,7 @@ a {
   float: left;
   margin-right: 9px;
   margin: 20px 10px 0 20px;
-  width: 420px;
+  width: 286px;
   position: relative;
 }
 /* line 147, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
@@ -246,7 +244,9 @@ a {
   z-index: 20;
   position: absolute;
   top: 0;
-  right: 0;
+  right: 0px;
+  width: 166px;
+  height: 183px;
   -moz-transition-property: all;
   -webkit-transition-property: all;
   -o-transition-property: all;
@@ -257,9 +257,8 @@ a {
   -webkit-animation: flipIn 2s;
   -moz-animation: flipIn 2s;
   -ms-animation: flipIn 2s;
-  margin-left: 0;
 }
-/* line 112, ../sass/style-solitare.scss */
+/* line 115, ../sass/style-solitare.scss */
 #game #pack-container #pack-playable .cardContainerX {
   -moz-transition-property: all;
   -webkit-transition-property: all;
@@ -270,36 +269,36 @@ a {
   -moz-animation: spinIn 2s;
   -ms-animation: spinIn 2s;
 }
-/* line 119, ../sass/style-solitare.scss */
+/* line 122, ../sass/style-solitare.scss */
 #game #pack-container #pack-playable .cardContainerX:nth-child(1n) {
-  right: 0;
-  z-index: 13;
-}
-/* line 123, ../sass/style-solitare.scss */
-#game #pack-container #pack-playable .cardContainerX:nth-child(2n) {
-  right: 50px;
-  z-index: 12;
-}
-/* line 127, ../sass/style-solitare.scss */
-#game #pack-container #pack-playable .cardContainerX:nth-child(3n) {
-  right: 100px;
+  left: 0px;
   z-index: 11;
 }
-/* line 134, ../sass/style-solitare.scss */
+/* line 126, ../sass/style-solitare.scss */
+#game #pack-container #pack-playable .cardContainerX:nth-child(2n) {
+  left: 33px;
+  z-index: 12;
+}
+/* line 130, ../sass/style-solitare.scss */
+#game #pack-container #pack-playable .cardContainerX:nth-child(3n) {
+  left: 66px;
+  z-index: 13;
+}
+/* line 137, ../sass/style-solitare.scss */
 #game #pack-container .pack {
   display: inline;
   float: left;
   margin-right: 9px;
   position: relative;
-  width: 150px;
-  height: 267px;
+  width: 100px;
+  height: 178px;
   z-index: 10;
 }
 /* line 147, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.11.5/frameworks/blueprint/stylesheets/blueprint/_grid.scss */
 * html #game #pack-container .pack {
   overflow-x: hidden;
 }
-/* line 141, ../sass/style-solitare.scss */
+/* line 144, ../sass/style-solitare.scss */
 #game #pack-container .pack .packEl:nth-last-child(1) {
   left: 8px;
   top: 8px;
@@ -309,19 +308,19 @@ a {
   -o-box-shadow: black 0px 0px 10px 1px;
   box-shadow: black 0px 0px 10px 1px;
 }
-/* line 147, ../sass/style-solitare.scss */
+/* line 150, ../sass/style-solitare.scss */
 #game #pack-container .pack .packEl:nth-last-child(2) {
   left: 6px;
   top: 6px;
   z-index: 2;
 }
-/* line 152, ../sass/style-solitare.scss */
+/* line 155, ../sass/style-solitare.scss */
 #game #pack-container .pack .packEl:nth-last-child(3) {
   left: 4px;
   top: 4px;
   z-index: 3;
 }
-/* line 157, ../sass/style-solitare.scss */
+/* line 160, ../sass/style-solitare.scss */
 #game #pack-container .pack .packEl:nth-last-child(4) {
   left: 2px;
   top: 2px;
@@ -329,57 +328,36 @@ a {
 }
 
 @-webkit-keyframes spinIn {
-  /* line 168, ../sass/style-solitare.scss */
-  0% {
-    left: 0;
+  /* line 171, ../sass/style-solitare.scss */
+  0%,20% {
+    left: -120px;
   }
 }
 
 @-moz-keyframes spinIn {
-  /* line 168, ../sass/style-solitare.scss */
-  0% {
-    left: 0;
+  /* line 171, ../sass/style-solitare.scss */
+  0%,20% {
+    left: -120px;
   }
 }
 
 @-ms-keyframes spinIn {
-  /* line 168, ../sass/style-solitare.scss */
-  0% {
-    left: 0;
+  /* line 171, ../sass/style-solitare.scss */
+  0%,20% {
+    left: -120px;
   }
 }
 
-@-webkit-keyframes flipIn {
-  /* line 173, ../sass/style-solitare.scss */
-  0% {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-  }
-}
-
-@-moz-keyframes flipIn {
-  /* line 173, ../sass/style-solitare.scss */
-  0% {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-  }
-}
-
-@-ms-keyframes flipIn {
-  /* line 173, ../sass/style-solitare.scss */
-  0% {
-    -webkit-transform: rotateY(180deg);
-    transform: rotateY(180deg);
-  }
-}
-
-/* line 197, ../sass/style-solitare.scss */
+@-webkit-keyframes flipIn {}
+@-moz-keyframes flipIn {}
+@-ms-keyframes flipIn {}
+/* line 205, ../sass/style-solitare.scss */
 .cardContainerX {
   position: absolute;
-  width: 150px;
-  height: 267px;
+  width: 100px;
+  height: 178px;
 }
-/* line 203, ../sass/style-solitare.scss */
+/* line 211, ../sass/style-solitare.scss */
 .cardContainerX:nth-last-child(1) .card, .cardContainerX:nth-last-child(2) .card, .cardContainerX:nth-last-child(3) .card, .cardContainerX:first-child .card {
   -moz-box-shadow: black 0px 0px 10px 1px;
   -webkit-box-shadow: black 0px 0px 10px 1px;
@@ -387,14 +365,14 @@ a {
   box-shadow: black 0px 0px 10px 1px;
 }
 
-/* line 209, ../sass/style-solitare.scss */
+/* line 217, ../sass/style-solitare.scss */
 .cardContainerY {
   position: absolute;
-  width: 150px;
-  height: 267px;
+  width: 100px;
+  height: 178px;
   z-index: 100;
 }
-/* line 215, ../sass/style-solitare.scss */
+/* line 223, ../sass/style-solitare.scss */
 .cardContainerY .back {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
@@ -402,33 +380,33 @@ a {
   transform: rotateY(180deg);
   z-index: 10;
 }
-/* line 221, ../sass/style-solitare.scss */
+/* line 229, ../sass/style-solitare.scss */
 .cardContainerY .card {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   z-index: 1;
   background: white;
 }
-/* line 225, ../sass/style-solitare.scss */
+/* line 233, ../sass/style-solitare.scss */
 .cardContainerY .card.clubs, .cardContainerY .card.spades {
   color: black;
 }
-/* line 228, ../sass/style-solitare.scss */
+/* line 236, ../sass/style-solitare.scss */
 .cardContainerY .card.diams, .cardContainerY .card.hearts {
   color: red;
 }
-/* line 232, ../sass/style-solitare.scss */
+/* line 240, ../sass/style-solitare.scss */
 .cardContainerY .card .number {
   font-size: 2em;
   position: absolute;
   text-transform: uppercase;
 }
-/* line 237, ../sass/style-solitare.scss */
+/* line 245, ../sass/style-solitare.scss */
 .cardContainerY .card .number:nth-of-type(1) {
   top: 5px;
   left: 20px;
 }
-/* line 241, ../sass/style-solitare.scss */
+/* line 249, ../sass/style-solitare.scss */
 .cardContainerY .card .number:nth-of-type(2) {
   -moz-transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
@@ -438,7 +416,7 @@ a {
   bottom: 5px;
   right: 20px;
 }
-/* line 248, ../sass/style-solitare.scss */
+/* line 256, ../sass/style-solitare.scss */
 .cardContainerY .card .name {
   font-size: 4em;
   text-align: center;
@@ -447,62 +425,62 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  line-height: 267px;
+  line-height: 178px;
 }
-/* line 259, ../sass/style-solitare.scss */
+/* line 267, ../sass/style-solitare.scss */
 .cardContainerY .card .suit {
   position: absolute;
   font-size: 4em;
 }
-/* line 263, ../sass/style-solitare.scss */
+/* line 271, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot1, .cardContainerY .card .suit.spot2, .cardContainerY .card .suit.spot3 {
   top: 50px;
 }
-/* line 266, ../sass/style-solitare.scss */
+/* line 274, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot4, .cardContainerY .card .suit.spot5, .cardContainerY .card .suit.spot6 {
   top: 0;
-  line-height: 267px;
+  line-height: 178px;
 }
-/* line 271, ../sass/style-solitare.scss */
+/* line 279, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot7, .cardContainerY .card .suit.spot8, .cardContainerY .card .suit.spot9 {
   bottom: 50px;
 }
-/* line 275, ../sass/style-solitare.scss */
+/* line 283, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot1, .cardContainerY .card .suit.spot4, .cardContainerY .card .suit.spot7 {
   left: 40px;
 }
-/* line 278, ../sass/style-solitare.scss */
+/* line 286, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot2, .cardContainerY .card .suit.spot5, .cardContainerY .card .suit.spot8, .cardContainerY .card .suit.spot10, .cardContainerY .card .suit.spot11 {
   left: 0;
   width: 100%;
   text-align: center;
 }
-/* line 283, ../sass/style-solitare.scss */
+/* line 291, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot3, .cardContainerY .card .suit.spot6, .cardContainerY .card .suit.spot9 {
   right: 40px;
 }
-/* line 286, ../sass/style-solitare.scss */
+/* line 294, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot10 {
   top: 130px;
 }
-/* line 289, ../sass/style-solitare.scss */
+/* line 297, ../sass/style-solitare.scss */
 .cardContainerY .card .suit.spot11 {
   bottom: 130px;
 }
-/* line 295, ../sass/style-solitare.scss */
+/* line 303, ../sass/style-solitare.scss */
 .cardContainerY .card.one .suit {
   font-size: 7em;
 }
-/* line 300, ../sass/style-solitare.scss */
+/* line 308, ../sass/style-solitare.scss */
 .cardContainerY .card.two .suit {
   font-size: 6em;
 }
-/* line 305, ../sass/style-solitare.scss */
+/* line 313, ../sass/style-solitare.scss */
 .cardContainerY .card.three .suit, .cardContainerY .card.four .suit, .cardContainerY .card.five .suit, .cardContainerY .card.six .suit {
   font-size: 5em;
 }
 
-/* line 313, ../sass/style-solitare.scss */
+/* line 321, ../sass/style-solitare.scss */
 #deal {
   font-size: 3em;
   position: absolute;
@@ -512,7 +490,7 @@ a {
   margin-left: -150px;
 }
 
-/* line 321, ../sass/style-solitare.scss */
+/* line 329, ../sass/style-solitare.scss */
 #snap {
   font-size: 3em;
   position: absolute;
@@ -522,7 +500,7 @@ a {
   margin-right: -150px;
 }
 
-/* line 329, ../sass/style-solitare.scss */
+/* line 337, ../sass/style-solitare.scss */
 .ready {
   font-size: 3em;
   position: absolute;
