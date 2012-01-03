@@ -105,7 +105,6 @@ a {
 			
 			@include transition-property('all');
 			@include backface-visibility(hidden);
-			transform-style: preserve-3d;
 			
 			
 			-webkit-animation: flipIn 2s;
@@ -115,9 +114,9 @@ a {
 		 	.cardContainerX{
 				@include transition-property('all');
 				top:5px;
-				-webkit-animation: spinIn 2s;
-				-moz-animation:    spinIn 2s;
-				-ms-animation:     spinIn 2s;
+				-webkit-animation: spinIn 1s;
+				-moz-animation:    spinIn 1s;
+				-ms-animation:     spinIn 1s;
 				
 				&:nth-child(1n){
 					left:0px;
@@ -168,15 +167,16 @@ a {
 }
 
 @mixin spinIn(){
-  	0%,20%{
-		left:-120px
+  	0%{
+		top:5;
+		left:0px;
 	}
 }
 @mixin flipIn(){
 	0%{
-	//	@include rotateY(180deg);
+	//	@include rotateY(-180deg);
 	}
-	30%{
+	20%{
 	}
 	60%{
 	//	@include rotateY(0deg);

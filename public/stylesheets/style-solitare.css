@@ -253,38 +253,37 @@ a {
   transition-property: all;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  transform-style: preserve-3d;
   -webkit-animation: flipIn 2s;
   -moz-animation: flipIn 2s;
   -ms-animation: flipIn 2s;
 }
-/* line 115, ../sass/style-solitare.scss */
+/* line 114, ../sass/style-solitare.scss */
 #game #pack-container #pack-playable .cardContainerX {
   -moz-transition-property: all;
   -webkit-transition-property: all;
   -o-transition-property: all;
   transition-property: all;
   top: 5px;
-  -webkit-animation: spinIn 2s;
-  -moz-animation: spinIn 2s;
-  -ms-animation: spinIn 2s;
+  -webkit-animation: spinIn 1s;
+  -moz-animation: spinIn 1s;
+  -ms-animation: spinIn 1s;
 }
-/* line 122, ../sass/style-solitare.scss */
+/* line 121, ../sass/style-solitare.scss */
 #game #pack-container #pack-playable .cardContainerX:nth-child(1n) {
   left: 0px;
   z-index: 11;
 }
-/* line 126, ../sass/style-solitare.scss */
+/* line 125, ../sass/style-solitare.scss */
 #game #pack-container #pack-playable .cardContainerX:nth-child(2n) {
   left: 33px;
   z-index: 12;
 }
-/* line 130, ../sass/style-solitare.scss */
+/* line 129, ../sass/style-solitare.scss */
 #game #pack-container #pack-playable .cardContainerX:nth-child(3n) {
   left: 66px;
   z-index: 13;
 }
-/* line 137, ../sass/style-solitare.scss */
+/* line 136, ../sass/style-solitare.scss */
 #game #pack-container .pack {
   display: inline;
   float: left;
@@ -298,7 +297,7 @@ a {
 * html #game #pack-container .pack {
   overflow-x: hidden;
 }
-/* line 144, ../sass/style-solitare.scss */
+/* line 143, ../sass/style-solitare.scss */
 #game #pack-container .pack .packEl:nth-last-child(1) {
   left: 8px;
   top: 8px;
@@ -308,19 +307,19 @@ a {
   -o-box-shadow: black 0px 0px 10px 1px;
   box-shadow: black 0px 0px 10px 1px;
 }
-/* line 150, ../sass/style-solitare.scss */
+/* line 149, ../sass/style-solitare.scss */
 #game #pack-container .pack .packEl:nth-last-child(2) {
   left: 6px;
   top: 6px;
   z-index: 2;
 }
-/* line 155, ../sass/style-solitare.scss */
+/* line 154, ../sass/style-solitare.scss */
 #game #pack-container .pack .packEl:nth-last-child(3) {
   left: 4px;
   top: 4px;
   z-index: 3;
 }
-/* line 160, ../sass/style-solitare.scss */
+/* line 159, ../sass/style-solitare.scss */
 #game #pack-container .pack .packEl:nth-last-child(4) {
   left: 2px;
   top: 2px;
@@ -328,23 +327,26 @@ a {
 }
 
 @-webkit-keyframes spinIn {
-  /* line 171, ../sass/style-solitare.scss */
-  0%,20% {
-    left: -120px;
+  /* line 170, ../sass/style-solitare.scss */
+  0% {
+    top: 5;
+    left: 0px;
   }
 }
 
 @-moz-keyframes spinIn {
-  /* line 171, ../sass/style-solitare.scss */
-  0%,20% {
-    left: -120px;
+  /* line 170, ../sass/style-solitare.scss */
+  0% {
+    top: 5;
+    left: 0px;
   }
 }
 
 @-ms-keyframes spinIn {
-  /* line 171, ../sass/style-solitare.scss */
-  0%,20% {
-    left: -120px;
+  /* line 170, ../sass/style-solitare.scss */
+  0% {
+    top: 5;
+    left: 0px;
   }
 }
 
